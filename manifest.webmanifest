@@ -1,0 +1,13 @@
+{
+  "name": "شجره‌نامه",
+  "short_name": "شجره‌نامه",
+  "description": "پیوند نسل‌ها، ماندگاری خاطرات",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#174c3c",
+  "icons": []
+}
