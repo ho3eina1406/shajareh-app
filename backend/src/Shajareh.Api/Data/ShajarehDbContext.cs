@@ -7,12 +7,19 @@ public sealed class ShajarehDbContext(DbContextOptions<ShajarehDbContext> option
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("public");
+
         modelBuilder.Entity<Family>().ToTable("families");
         modelBuilder.Entity<Person>().ToTable("persons");
-        modelBuilder.Entity<FamilyPerson>().ToTable("family_persons");
-        modelBuilder.Entity<FamilyMembership>().ToTable("family_memberships");
-        modelBuilder.Entity<Relationship>().ToTable("relationships");
-        modelBuilder.Entity<UserAccount>().ToTable("user_accounts");
+        modelBuilder.Entity<FamilyPerson>().ToTable("family_persons")
+            .HasKey(x => new { x.FamilyId, x.PersonId });
+        modelBuilder.Entity<FamilyMembership>().ToTable("family_memberships")
+            .HasIndex(x => new { x.FamilyId, x.PersonId }).IsUnique();
+        modelBuilder.Entity<Relationship>().ToTable("relationships")
+            .HasIndex(x => new { x.FamilyId, x.PersonId });
+        modelBuilder.Entity<UserAccount>().ToTable("user_accounts")
+            .HasIndex(x => x.PersonId).IsUnique();
+        modelBuilder.Entity<UserAccount>()
+            .HasIndex(x => x.PhoneNumber).IsUnique();
     }
 }
 
