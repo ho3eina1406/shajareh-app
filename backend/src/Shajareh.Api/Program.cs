@@ -3,7 +3,7 @@ using Shajareh.Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Shajareh")
-    ?? Environment.GetEnvironmentVariable("SHajareh_DATABASE")
+    ?? Environment.GetEnvironmentVariable("SHAJAREH_DATABASE")
     ?? "Host=localhost;Port=5432;Database=shajareh;Username=shajareh;Password=change-me";
 
 builder.Services.AddDbContext<ShajarehDbContext>(options =>
