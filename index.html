@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#174c3c"><meta name="description" content="نمونه آزمایشی اپلیکیشن شجره‌نامه خانوادگی">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>شجره‌نامه | پیوند نسل‌ها</title>
+<style>
+:root{--green:#174c3c;--green2:#23644e;--gold:#c6a56a;--cream:#f7f4ec;--paper:#fffefa;--ink:#26352f;--muted:#78847e;--line:#e7e9e3;--blue:#e8eff8;--shadow:0 12px 34px #183c2b12}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;font-size:14px}button,input{font:inherit}button{cursor:pointer}.app{max-width:1160px;margin:auto;min-height:100vh;background:#fbfaf6;box-shadow:0 0 60px #183c2b0b}.top{background:linear-gradient(120deg,#123c30,#1e5b46);color:white;padding:22px 28px 26px;position:relative;overflow:hidden}.top:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #ffffff18;border-radius:50%;left:-80px;top:-145px;box-shadow:0 0 0 25px #ffffff08,0 0 0 55px #ffffff06}.brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1}.logo{width:44px;height:44px;border-radius:14px;background:#d9bd83;color:#173e31;display:grid;place-items:center;font-size:24px}.brand b{font-size:18px}.brand small{display:block;color:#d4e3d9;margin-top:4px}.topline{display:flex;justify-content:space-between;align-items:center;gap:16px}.notify{border:1px solid #ffffff35;background:#ffffff12;color:white;border-radius:12px;padding:10px 12px}.welcome{margin-top:26px;position:relative;z-index:1}.welcome h1{font-size:25px;margin:0 0 8px}.welcome p{color:#d8e6dd;margin:0}.shell{display:grid;grid-template-columns:220px 1fr;min-height:650px}.side{border-left:1px solid var(--line);padding:22px 14px;background:#fffefa}.family-switch{padding:14px;background:#f1f4ef;border-radius:14px;margin-bottom:20px}.family-switch small{color:var(--muted)}.family-switch b{display:block;margin-top:7px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;text-align:right;padding:13px 14px;border-radius:11px;color:#5e6c65;display:flex;align-items:center;gap:12px}.nav button.active,.nav button:hover{background:#eaf1eb;color:var(--green);font-weight:bold}.nav .ico{font-size:18px;width:22px;text-align:center}.side-note{margin-top:28px;padding:14px;border:1px solid var(--line);border-radius:13px;color:var(--muted);font-size:12px;line-height:1.9}.main{padding:26px 28px 90px;min-width:0}.pagehead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.pagehead h2{font-size:21px;margin:0}.sub{color:var(--muted);font-size:12px;margin-top:7px}.btn{border:0;border-radius:11px;padding:11px 15px;background:var(--green);color:white}.btn.light{background:#edf2ed;color:var(--green)}.btn.gold{background:#d7bd8c;color:#3e321d}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}.stat,.card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow)}.stat .symbol{font-size:21px}.stat strong{display:block;font-size:24px;margin:9px 0 4px;color:var(--green)}.muted{color:var(--muted);font-size:12px}.cols{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.card h3{margin:0 0 16px;font-size:15px}.event{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.event:first-of-type{border:0}.event-icon{width:40px;height:40px;border-radius:12px;background:#f4eee1;display:grid;place-items:center;font-size:19px}.event b{display:block;margin:3px 0 6px}.tree-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;min-height:430px}.tree{min-width:560px;display:flex;align-items:center;flex-direction:column;gap:12px}.generation{display:flex;justify-content:center;gap:18px;width:100%}.person{width:150px;border:1px solid #e2e8df;border-radius:14px;padding:12px;text-align:center;background:#fffefa;cursor:pointer;transition:.18s}.person:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#9ebaa8}.person.me{border:2px solid #438469;background:#f0f6f1}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:#e7eee8;color:#315c48;font-size:20px}.person b{display:block;font-size:13px}.person small{display:block;color:var(--muted);margin-top:6px;font-size:11px}.connector{height:20px;border-right:2px solid #c9d5ca}.branch{display:flex;gap:45px;justify-content:center}.branch .person{background:#f7f9fc}.tree-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}.search{border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:white;min-width:200px;outline:none}.member{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.member:first-of-type{border:0}.member .avatar{margin:0;flex-shrink:0}.member-info{flex:1}.member-info b{display:block;margin-bottom:5px}.pill{font-size:10px;background:#edf4ee;color:#347153;padding:5px 8px;border-radius:30px}.post{border-top:1px solid var(--line);padding:14px 0;line-height:2}.post:first-of-type{border:0}.post-head{display:flex;align-items:center;gap:9px}.post-head .avatar{margin:0;width:34px;height:34px}.post p{margin:9px 0;color:#53625a}.hidden{display:none!important}.mobilebar{display:none}.modal-bg{position:fixed;inset:0;background:#10251dcc;display:grid;place-items:center;padding:18px;z-index:10}.modal{background:#fffefa;border-radius:18px;padding:22px;width:min(440px,100%);box-shadow:0 20px 80px #0003}.modal h3{margin:0 0 15px}.modal .close{float:left;border:0;background:#edf1ec;border-radius:9px;padding:7px 10px}.field{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;margin:7px 0 13px;background:white}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#173f32;color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:20}.foot{text-align:center;color:#98a29b;font-size:11px;padding:18px;border-top:1px solid var(--line)}
+@media(max-width:760px){.shell{display:block}.side{display:none}.main{padding:19px 15px 88px}.top{padding:18px}.welcome h1{font-size:21px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}.cols{grid-template-columns:1fr}.pagehead{align-items:flex-start}.mobilebar{display:flex;position:fixed;bottom:0;right:0;left:0;background:#fffefa;border-top:1px solid var(--line);justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom));z-index:5}.mobilebar button{border:0;background:none;color:#77847b;font-size:11px;display:grid;gap:4px;justify-items:center}.mobilebar button.active{color:var(--green);font-weight:bold}.mobilebar span{font-size:19px}.tree-wrap{padding:14px}.pagehead h2{font-size:18px}.search{min-width:0;flex:1}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="topline"><div class="brand"><div class="logo">⌘</div><div><b>شجره‌نامه</b><small>پیوند نسل‌ها، ماندگاری خاطرات</small></div></div><button class="notify" onclick="toast('اعلان جدیدی ندارید')">♧　اعلان‌ها</button></div>
+ <div class="welcome"><h1>خوش آمدید، علی جان</h1><p>به فضای خانوادگی خاندان احمدی خوش آمدید.</p></div>
+</header>
+<div class="shell">
+<aside class="side">
+ <div class="family-switch"><small>خاندان انتخاب‌شده</small><b>خاندان احمدی　⌄</b></div>
+ <nav class="nav">
+  <button class="active" data-page="home"><span class="ico">⌂</span>خانه</button>
+  <button data-page="tree"><span class="ico">♧</span>شجره‌نامه</button>
+  <button data-page="members"><span class="ico">♙</span>اعضای خاندان</button>
+  <button data-page="feed"><span class="ico">▤</span>خبرها و خاطرات</button>
+  <button data-page="archive"><span class="ico">▧</span>آرشیو خانوادگی</button>
+  <button data-page="messages"><span class="ico">✉</span>پیام‌ها</button>
+ </nav>
+ <div class="side-note">این نسخه یک پیش‌نمایش تعاملی است. اطلاعات افراد و رویدادها نمونه و ساختگی هستند.</div>
+</aside>
+<main class="main">
+<section id="page-home">
+ <div class="pagehead"><div><h2>نمای کلی خاندان</h2><div class="sub">نگاهی کوتاه به آنچه در خانواده می‌گذرد</div></div><button class="btn gold" onclick="openModal('دعوت عضو جدید','برای دعوت یکی از اعضای خانواده، شماره موبایل او را وارد کنید.')">＋ دعوت عضو</button></div>
+ <div class="stats">
+  <div class="stat"><div class="symbol">♙</div><strong>۱۲۸</strong><span class="muted">عضو خاندان</span></div>
+  <div class="stat"><div class="symbol">♧</div><strong>۶ نسل</strong><span class="muted">ثبت‌شده در شجره</span></div>
+  <div class="stat"><div class="symbol">▧</div><strong>۴۲</strong><span class="muted">عکس و سند آرشیوی</span></div>
+ </div>
+ <div class="cols">
+  <div class="card"><h3>اتفاقات پیش رو</h3>
+   <div class="event"><div class="event-icon">🎂</div><div><b>تولد مریم احمدی</b><span class="muted">پنج‌شنبه · ۱۸ آبان</span></div></div>
+   <div class="event"><div class="event-icon">💍</div><div><b>سالگرد ازدواج</b><span class="muted">شنبه · ۲۰ آبان</span></div></div>
+   <div class="event"><div class="event-icon">🌿</div><div><b>دورهمی خانوادگی</b><span class="muted">جمعه · ۲۶ آبان</span></div></div>
+  </div>
+  <div class="card"><h3>میانبرهای شما</h3>
+   <div class="event"><div class="event-icon">♧</div><div><b>مشاهده شجره</b><span class="muted">پیدا کردن جایگاه افراد در درخت</span></div></div>
+   <div class="event"><div class="event-icon">♙</div><div><b>پروفایل من</b><span class="muted">اطلاعات و روابط خانوادگی</span></div></div>
+   <div class="event"><div class="event-icon">▧</div><div><b>خاطرات قدیمی</b><span class="muted">عکس‌ها و روایت‌های خاندان</span></div></div>
+  </div>
+ </div>
+ <div class="card" style="margin-top:16px"><h3>تازه‌ترین مطالب خاندان</h3><div class="post"><div class="post-head"><div class="avatar">م</div><b>مریم احمدی</b><span class="muted">· ۲ ساعت پیش</span></div><p>امروز یک عکس قدیمی از دورهمی خانوادگی پیدا کردم. چقدر دیدن چهره‌های عزیز گذشته دلنشین است.</p><span class="muted">♡ ۱۲ پسند　　◯ ۳ دیدگاه</span></div></div>
+</section>
+<section id="page-tree" class="hidden">
+ <div class="pagehead"><div><h2>شجره‌نامه خاندان</h2><div class="sub">برای دیدن اطلاعات هر شخص روی کارت او بزنید.</div></div><button class="btn light" onclick="toast('در نسخه کامل خروجی تصویر فعال می‌شود')">⇩ خروجی</button></div>
+ <div class="tree-tools"><input class="search" id="treeSearch" placeholder="جست‌وجوی نام در شجره..." oninput="searchTree(this.value)"><button class="btn light" onclick="toast('نمای شاخه پدری و مادری')">شاخه‌ها</button><button class="btn light" onclick="toast('نمایش کامل درخت')">نمای کامل</button></div>
+ <div class="tree-wrap"><div class="tree" id="tree">
+  <div class="generation"><div class="person" data-name="احمد احمدی" onclick="profile('احمد احمدی','پدربزرگ پدری','نسل اول خاندان')"><div class="avatar">👴</div><b>احمد احمدی</b><small>پدربزرگ پدری</small></div><div class="person" data-name="زهرا رضایی" onclick="profile('زهرا رضایی','مادربزرگ پدری','نسل اول خاندان')"><div class="avatar">👵</div><b>زهرا رضایی</b><small>مادربزرگ پدری</small></div></div>
+  <div class="connector"></div>
+  <div class="generation"><div class="person" data-name="محمد احمدی" onclick="profile('محمد احمدی','پدر شما','نسل دوم')"><div class="avatar">👨</div><b>محمد احمدی</b><small>پدر شما</small></div><div class="person" data-name="حسین احمدی" onclick="profile('حسین احمدی','عموی شما','نسل دوم')"><div class="avatar">👨</div><b>حسین احمدی</b><small>عموی شما</small></div></div>
+  <div class="connector"></div>
+  <div class="generation"><div class="person me" data-name="علی احمدی" onclick="profile('علی احمدی','شما','نسل سوم')"><div class="avatar">🙂</div><b>علی احمدی</b><small>شما · مشاهده‌کننده</small></div><div class="person" data-name="سارا احمدی" onclick="profile('سارا احمدی','دخترعموی شما','نسل سوم')"><div class="avatar">👩</div><b>سارا احمدی</b><small>دخترعموی شما</small></div></div>
+  <div class="connector"></div><div class="generation"><div class="person" data-name="آراد احمدی" onclick="profile('آراد احمدی','فرزند شما','نسل چهارم')"><div class="avatar">👦</div><b>آراد احمدی</b><small>فرزند شما</small></div></div>
+ </div></div>
+ <p class="muted" style="line-height:2">نمونه نمایشی: در نسخه کامل، درخت بزرگ‌نمایی، جابه‌جایی، باز و بسته کردن شاخه‌ها و نمایش مسیر ارتباط را پشتیبانی می‌کند.</p>
+</section>
+<section id="page-members" class="hidden">
+ <div class="pagehead"><div><h2>اعضای خاندان</h2><div class="sub">افراد ثبت‌شده در خاندان احمدی</div></div><button class="btn" onclick="openModal('دعوت عضو جدید','شماره موبایل فرد را وارد کنید تا دعوت برای او ارسال شود.')">＋ دعوت عضو</button></div>
+ <input class="search" style="width:100%;margin-bottom:14px" placeholder="جست‌وجوی نام اعضا..." oninput="filterMembers(this.value)">
+ <div class="card" id="memberList">
+  <div class="member" data-name="محمد احمدی"><div class="avatar">م</div><div class="member-info"><b>محمد احمدی</b><span class="muted">پدر · مدیر خاندان</span></div><span class="pill">عضو فعال</span></div>
+  <div class="member" data-name="زهرا رضایی"><div class="avatar">ز</div><div class="member-info"><b>زهرا رضایی</b><span class="muted">مادربزرگ</span></div><span class="pill">عضو فعال</span></div>
+  <div class="member" data-name="سارا احمدی"><div class="avatar">س</div><div class="member-info"><b>سارا احمدی</b><span class="muted">دخترعمو</span></div><span class="pill">عضو فعال</span></div>
+  <div class="member" data-name="آراد احمدی"><div class="avatar">آ</div><div class="member-info"><b>آراد احمدی</b><span class="muted">فرزند شما</span></div><span class="pill">پروفایل کودک</span></div>
+ </div>
+</section>
+<section id="page-feed" class="hidden">
+ <div class="pagehead"><div><h2>خبرها و خاطرات</h2><div class="sub">داستان‌ها و اتفاقات اعضای خاندان</div></div><button class="btn" onclick="openModal('انتشار مطلب','متن خاطره یا خبر خانوادگی خود را بنویسید.')">＋ مطلب جدید</button></div>
+ <div class="card"><div class="post"><div class="post-head"><div class="avatar">م</div><b>مریم احمدی</b><span class="muted">· امروز</span></div><p>این عکس مربوط به یکی از سفرهای خانوادگی قدیم است. اگر کسی تاریخ دقیقش را می‌داند، خوشحال می‌شوم اضافه کند.</p><span class="muted">♡ ۱۲ پسند　　◯ ۳ دیدگاه</span></div><div class="post"><div class="post-head"><div class="avatar">ح</div><b>حسین احمدی</b><span class="muted">· دیروز</span></div><p>یاد همه بزرگ‌ترهای خاندان که با مهربانی و خاطراتشان ما را کنار هم نگه داشتند، گرامی.</p><span class="muted">♡ ۲۴ پسند　　◯ ۵ دیدگاه</span></div></div>
+</section>
+<section id="page-archive" class="hidden">
+ <div class="pagehead"><div><h2>آرشیو خانوادگی</h2><div class="sub">گنجینه عکس‌ها، نامه‌ها و خاطرات</div></div><button class="btn" onclick="toast('افزودن فایل در نسخه متصل به سرور فعال می‌شود')">＋ افزودن سند</button></div>
+ <div class="stats"><div class="stat"><div class="symbol">▧</div><strong>۳۲</strong><span class="muted">عکس قدیمی</span></div><div class="stat"><div class="symbol">✉</div><strong>۶</strong><span class="muted">نامه و دست‌نوشته</span></div><div class="stat"><div class="symbol">▤</div><strong>۴</strong><span class="muted">روایت خانوادگی</span></div></div>
+ <div class="card"><h3>دسته‌بندی آرشیو</h3><div class="event"><div class="event-icon">📷</div><div><b>عکس‌های خانوادگی</b><span class="muted">تصاویر نسل‌های گذشته</span></div></div><div class="event"><div class="event-icon">📜</div><div><b>نامه‌ها و دست‌نوشته‌ها</b><span class="muted">اسناد و یادگارهای قدیمی</span></div></div><div class="event"><div class="event-icon">📖</div><div><b>خاطرات و روایت‌ها</b><span class="muted">داستان‌های اعضای خاندان</span></div></div></div>
+</section>
+<section id="page-messages" class="hidden">
+ <div class="pagehead"><div><h2>پیام‌های خصوصی</h2><div class="sub">گفت‌وگوی اعضای خاندان</div></div><button class="btn" onclick="openModal('گفت‌وگوی جدید','نام شخص موردنظر را وارد کنید.')">＋ پیام جدید</button></div>
+ <div class="card"><div class="member"><div class="avatar">س</div><div class="member-info"><b>سارا احمدی</b><span class="muted">سلام، عکس قدیمی را دیدم...</span></div><span class="muted">۱۰:۴۵</span></div><div class="member"><div class="avatar">م</div><div class="member-info"><b>محمد احمدی</b><span class="muted">ممنون از پیگیری شما</span></div><span class="muted">دیروز</span></div><p class="muted">پیام‌رسان این نسخه نمایشی است و هنوز پیام واقعی ارسال نمی‌کند.</p></div>
+</section>
+</main>
+</div>
+<nav class="mobilebar"><button class="active" data-page="home"><span>⌂</span>خانه</button><button data-page="tree"><span>♧</span>شجره</button><button data-page="members"><span>♙</span>اعضا</button><button data-page="feed"><span>▤</span>مطالب</button><button data-page="archive"><span>▧</span>آرشیو</button></nav>
+<div class="foot">نسخه نمایشی شجره‌نامه · اطلاعات این نسخه ساختگی است</div>
+</div>
+<div id="modalBg" class="modal-bg hidden" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" onclick="closeModal()">✕</button><h3 id="modalTitle">عنوان</h3><p id="modalText" style="line-height:2;color:#65736a"></p><input class="field" id="modalInput" placeholder="اینجا بنویسید"><button class="btn" onclick="modalSubmit()">ثبت</button></div></div>
+<div id="toast" class="toast hidden"></div>
+<script>
+let currentPage='home',toastTimer;
+function go(page){currentPage=page;document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById('page-'+page).classList.remove('hidden');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add('hidden'),2600)}
+function openModal(title,text){document.getElementById('modalTitle').textContent=title;document.getElementById('modalText').textContent=text;document.getElementById('modalInput').value='';document.getElementById('modalBg').classList.remove('hidden')}
+function closeModal(){document.getElementById('modalBg').classList.add('hidden')}
+function modalSubmit(){const v=document.getElementById('modalInput').value.trim();if(!v){toast('لطفاً اطلاعات را وارد کنید');return}closeModal();toast('در نسخه نمایشی ثبت واقعی انجام نمی‌شود')}
+function profile(name,relation,generation){openModal(name,relation+' · '+generation+'\nاین پروفایل نمونه است. در نسخه کامل، اطلاعات و روابط خانوادگی نمایش داده می‌شود.')}
+function searchTree(v){document.querySelectorAll('#tree .person').forEach(p=>p.style.opacity=!v||p.dataset.name.includes(v)?'1':'.2')}
+function filterMembers(v){document.querySelectorAll('#memberList .member').forEach(p=>p.style.display=p.dataset.name.includes(v)?'flex':'none')}
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body></html>
