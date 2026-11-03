@@ -1,0 +1,32 @@
+name: Backend validation
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend-check.yml"
+  pull_request:
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend-check.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Restore
+        run: dotnet restore backend/src/Shajareh.Api/Shajareh.Api.csproj
+      - name: Build
+        run: dotnet build backend/src/Shajareh.Api/Shajareh.Api.csproj --configuration Release --no-restore
+      - name: Validate Docker Compose
+        run: |
+          cp backend/.env.example backend/.env
+          sed -i 's/replace-with-a-long-random-secret/ci-temporary-password/' backend/.env
+          docker compose -f backend/docker-compose.yml --env-file backend/.env config --quiet
