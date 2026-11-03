@@ -19,9 +19,11 @@ jobs:
           channel: stable
       - name: Create Android project scaffold
         run: flutter create --platforms=android --org ir.shajareh --project-name shajareh_app build_app
-      - name: Add Shajareh app source
+      - name: Add Shajareh app source and local storage dependency
+        working-directory: build_app
         run: |
-          cp mobile/lib/main.dart build_app/lib/main.dart
+          flutter pub add shared_preferences
+          cp ../mobile/lib/main.dart lib/main.dart
       - name: Build release APK
         working-directory: build_app
         run: flutter build apk --release
