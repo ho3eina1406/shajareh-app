@@ -106,6 +106,38 @@ function modalSubmit(){const v=document.getElementById('modalInput').value.trim(
 function profile(name,relation,generation){openModal(name,relation+' · '+generation+'\nاین پروفایل نمونه است. در نسخه کامل، اطلاعات و روابط خانوادگی نمایش داده می‌شود.')}
 function searchTree(v){document.querySelectorAll('#tree .person').forEach(p=>p.style.opacity=!v||p.dataset.name.includes(v)?'1':'.2')}
 function filterMembers(v){document.querySelectorAll('#memberList .member').forEach(p=>p.style.display=p.dataset.name.includes(v)?'flex':'none')}
+
+/* امکانات آزمایشی ذخیره محلی */
+const DEMO_KEY='shajareh_demo_members_v1';
+function loadDemoMembers(){try{return JSON.parse(localStorage.getItem(DEMO_KEY)||'[]')}catch{return []}}
+function saveDemoMembers(items){localStorage.setItem(DEMO_KEY,JSON.stringify(items))}
+function renderDemoMembers(){
+ const items=loadDemoMembers();
+ const list=document.getElementById('memberList');
+ items.forEach((m,i)=>{
+  if(document.querySelector('[data-demo-id="'+i+'"]')) return;
+  const row=document.createElement('div');row.className='member';row.dataset.name=m.name;row.dataset.demoId=i;
+  const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent=m.name.slice(0,1);
+  const info=document.createElement('div');info.className='member-info';
+  const b=document.createElement('b');b.textContent=m.name;
+  const small=document.createElement('span');small.className='muted';small.textContent=m.relation||'عضو جدید';
+  info.append(b,small);const pill=document.createElement('span');pill.className='pill';pill.textContent='ثبت‌شده در این مرورگر';
+  row.append(avatar,info,pill);list.append(row);
+ });
+}
+function addDemoMember(){
+ const name=document.getElementById('modalInput').value.trim();
+ if(!name){toast('نام شخص را وارد کنید');return}
+ const items=loadDemoMembers();items.push({name,relation:'عضو جدید'});saveDemoMembers(items);
+ closeModal();renderDemoMembers();toast('شخص در همین مرورگر ذخیره شد');
+}
+function openAddPerson(){openModal('ثبت شخص جدید','نام و نام خانوادگی فرد را وارد کنید. این اطلاعات فعلاً فقط در همین مرورگر ذخیره می‌شود.');document.querySelector('#modalBg .btn').onclick=addDemoMember;document.getElementById('modalInput').placeholder='مثلاً: رضا احمدی'}
+const oldOpenModal=openModal;
+function openModal(title,text){oldOpenModal(title,text);document.querySelector('#modalBg .btn').onclick=modalSubmit}
+document.querySelectorAll('#page-members .pagehead .btn').forEach(b=>{b.textContent='＋ ثبت شخص جدید';b.onclick=openAddPerson});
+document.querySelectorAll('#page-home .pagehead .btn').forEach(b=>{b.onclick=()=>{openModal('دعوت عضو جدید','دعوت واقعی پس از اتصال سامانه پیامکی فعال می‌شود.')}})
+renderDemoMembers();
+
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>
